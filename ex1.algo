@@ -1,0 +1,64 @@
+ALGORITHM exercice1
+VAR 
+    t1: ARRAY_OF FLOAT[n];
+    t2: ARRAY_OF FLOAT[m];
+    t3: ARRAY_OF type[x];
+    s:FLOAT
+    BEGIN
+        t3:FUNCTION distincts(verif;t1;t2)
+        s:=FUNCTION somme(t3)
+        write(s)
+    END
+
+    
+FUNCTION verif(t : ARRAY_OF float[n]) : BOOLEEN
+VAR
+    ver:BOOLEEN
+    i:INTEGER
+BEGIN
+    verif=FALSE
+    REPEAT
+        IF (t[i]=x) THEN
+            ver:=TRUE
+        ELSE
+            i:=i+1
+        END_IF
+    UNTIL (ver=TRUE) or (i=n+1) 
+RETURN ver ;
+END
+
+FUNCTION distincts(verif:FUNCTION;t1 : ARRAY_OF FLOAT[n];t2: ARRAY_OF FLOAT[m];) : ARRAY_OF FLOAT[x]
+VAR
+    t3: ARRAY_OF FLOAT[x];
+    l:=0
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        FOR j FROM 0 TO m-1  DO
+            IF (verif(t1[i],t2[j])) THEN
+                t3[l]:=t1[i]
+                l:=l+1
+    FOR i FROM 0 TO n-1  DO
+        FOR j FROM 0 TO m-1  DO
+            IF (verif(t1[i],t2[j])) THEN
+                t3[l]:=t2[i]
+                l:=l+1
+            END_IF
+        END_FOR
+    END_FOR
+    RETURN t3 ;
+END
+
+FUNCTION somme(t3 : ARRAY_OF FLOAT[x]) : FLOAT
+VAR
+    s:=0
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        FOR j FROM 1 TO n-1  DO
+            IF verif(t3[i],t3[j])=FALSE THEN
+                s:=s+t3[i]
+        END_FOR
+    END_FOR
+    RETURN s;
+END
+
+
