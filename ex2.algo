@@ -1,0 +1,20 @@
+ALGORITHM EX2
+VAR
+    t1 : ARRAY_OF INTEGER[n];
+    t2: ARRAY_OF INTEGER [n];
+    s:INTEGER:=0
+BEGIN
+    dot_product(t1,t2,s)
+    IF (s=0) THEN
+        write("orthogonal")
+    ELSE
+        write("not orthogonal")
+    END_IF
+END
+PROCEDURE dot_product(t1 : ARRAY_OF INTEGER[n], t2 : ARRAY_OF INTEGER[n],VAR s:FLOAT)
+    BEGIN
+        FOR i FROM 0 TO n-1  DO
+            s:=s+t1[i]*t2[i]
+        END_FOR
+    END
+END

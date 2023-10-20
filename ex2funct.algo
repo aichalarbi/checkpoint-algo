@@ -1,0 +1,26 @@
+ALGORITHM EX2
+VAR
+    t1 : ARRAY_OF FLOAT[n];
+    t2: ARRAY_OF FLOAT[n];
+    s:FLOAT;
+    
+BEGIN
+    s:=dot_product(t1;t2)
+    IF s=0 THEN
+        write("orthogonal")
+    ELSE
+        write("not orthogonal")
+    END_IF
+END
+
+
+    FUNCTION dot_product(t1 : ARRAY_OF FLOAT[n]; t2 : ARRAY_OF FLOAT[n];):FLOAT
+    VAR
+        s=FLOAT
+    BEGIN
+        s:=0
+        FOR i FROM 0 TO n-1  DO
+            s:=s+t1[i]*t2[i]
+        END_FOR
+    RETURN s
+END
